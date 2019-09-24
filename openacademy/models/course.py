@@ -13,6 +13,9 @@ class Course(models.Model):
     session_ids = fields.One2many('openacademy.session', 'course_id', string="Sessions")
 
     level = fields.Selection([(1, 'Easy'), (2, 'Medium'), (3, 'Hard')], string="Difficulty Level")
+    hours_to_study_per_day = fields.Float()
+    completion = fields.Float()
+    image = fields.Binary()
 
 
 class Session(models.Model):
